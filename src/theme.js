@@ -16,7 +16,10 @@ const theme = createTheme({
     mode: "dark"
   },
   typography: {
-    "fontFamily": `"Helvetica"`
+    "fontFamily": `"Helvetica"`,
+    button: {
+      textTransform: 'none'
+    }
   }
 });
   

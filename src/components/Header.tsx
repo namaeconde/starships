@@ -23,8 +23,7 @@ export default function Header({ fixedHeader }: { fixedHeader: Boolean}) {
         pl={{ xs: 2, sm: 3 }}
         pr={{ xs: 2, sm: 3 }}>
         <StarshipLogo />
-        <Button 
-          variant="outlined"
+        <Button
           style={{ 
             color:`${color.wild_watermelon}`,
             backgroundColor:`${color.racing_green}`,
