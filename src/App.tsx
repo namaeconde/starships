@@ -1,12 +1,22 @@
-import React from 'react';
+import { ThemeProvider } from "@mui/material/styles";
+import theme, { color } from "./theme";
+import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
+import Box from "@mui/material/Box";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box
+        display="flex"
+        minHeight="100vh"
+        bgcolor={ color.black_pearl }
+      >
+        <HomePage />
+      </Box>
+    </ThemeProvider>
   );
 }
 
