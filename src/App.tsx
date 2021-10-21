@@ -1,7 +1,6 @@
 import { ThemeProvider } from "@mui/material/styles";
 import theme, { color } from "./theme";
 import CssBaseline from '@mui/material/CssBaseline';
-import './App.css';
 import Box from "@mui/material/Box";
 import HomePage from "./pages/HomePage";
 
