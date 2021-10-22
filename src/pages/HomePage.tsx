@@ -40,7 +40,8 @@ function Body({ title, list }: any ): JSX.Element {
     <>
       <Box sx={{
         display: 'flex',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        my:3
       }}>
         <Typography fontWeight={700} fontSize={48}>{title}</Typography>
       </Box>
