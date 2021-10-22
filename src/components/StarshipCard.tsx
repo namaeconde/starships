@@ -10,12 +10,13 @@ import StarshipImage from '../images/starship.png';
 import Grid from "@mui/material/Grid";
 import TextField from '@mui/material/TextField';
 import { useDispatch } from 'react-redux';
-import { addToList, removeFromList } from '../redux/favoriteListSlice';
+import { addToList, removeFromList, updateFavorite } from '../redux/favoriteListSlice';
 import LightTooltip from "./LightTooltip";
 
 export default function StarshipCard({ starship, favorite, showNote }: { starship: any, favorite: boolean, showNote: boolean }): JSX.Element { // TODO: Update starship any to Starship Interface
   const { name, manufacturer, hyperdrive_rating, passengers } = starship;
-  const [ isFavorite, setIsFavorite ] = useState(favorite); // TODO: Update to get data from redux
+  const [ isFavorite, setIsFavorite ] = useState(favorite);
+  const [ notes, setNotes ] = useState(starship.notes);
   const dispatch = useDispatch();
 
   const onSetFavorite = () => {
@@ -25,6 +26,12 @@ export default function StarshipCard({ starship, favorite, showNote }: { starshi
       dispatch(addToList(starship));
     }
     setIsFavorite(!isFavorite);
+  }
+
+  const handleAddNotes = (event: { target: { value: any; }; }) => {
+    const newNote = event.target.value;
+    setNotes(newNote);
+    dispatch(updateFavorite({...starship, notes: newNote }));
   }
 
   return (
@@ -62,6 +69,8 @@ export default function StarshipCard({ starship, favorite, showNote }: { starshi
             variant="outlined" 
             multiline
             rows={4}
+            value={notes}
+            onChange={handleAddNotes}
           />
         </Box>
       }

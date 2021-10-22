@@ -18,10 +18,24 @@ export const favoriteListSlice = createSlice({
     removeFromList: (state, action: PayloadAction<any>) => {
       let newList = state.value.filter( data => data.name !== action.payload.name);
       state.value = newList;
+    },
+    updateFavorite: (state, action: PayloadAction<any>) => {
+      let newList = state.value.map((item, index) => {
+        if (item.name !== action.payload.name) {
+          return item
+        }
+
+        return {
+          ...item,
+          ...action.payload
+        }
+      })
+
+      state.value = newList;
     }
   }
 })
 
-export const { addToList, removeFromList } = favoriteListSlice.actions
+export const { addToList, removeFromList, updateFavorite } = favoriteListSlice.actions
 
 export default favoriteListSlice.reducer
