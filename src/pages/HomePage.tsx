@@ -10,7 +10,7 @@ import StarshipCard from "../components/StarshipCard";
 import Pagination from "../components/Pagination";
 import Skeleton from '@mui/material/Skeleton';
 import { RootState } from '../redux/store';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 const SWAPI_STARSHIPS_URL = "https://swapi.dev/api/starships";
 
