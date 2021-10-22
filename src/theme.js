@@ -13,12 +13,15 @@ export const color = {
 
 const theme = createTheme({
   palette: {
-    mode: "dark"
+    mode: "dark",
+    primary: {
+      main: `${color.wild_watermelon}`
+    }
   },
   typography: {
     "fontFamily": `"Helvetica"`,
     button: {
-      textTransform: 'none'
+      textTransform: 'none',
     }
   }
 });
