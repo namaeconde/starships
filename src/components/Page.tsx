@@ -5,13 +5,13 @@ import Header from "./Header";
 
 interface Props {
   children: {
-    sidebar: ReactNode
+    sidebar?: ReactNode
     body: ReactNode
-  }
+    footer?: ReactNode  }
 }
 
 export default function Page(props: Props) {
-  const { sidebar, body } = props.children;
+  const { sidebar, body, footer } = props.children;
 
   const { sidebarContainer, bodyContainer, footerContainer } = makeStyles(() => ({
     sidebarContainer: {
@@ -58,7 +58,7 @@ export default function Page(props: Props) {
           { body }
         </Box>
         <Box sx={{ gridArea: 'footer' }} className={ footerContainer } m={2}>
-          Footer
+          { footer ? footer : null }
         </Box>
       </Box>
     </Box>
