@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 
 export const StarshipLogo = () => {
   return (
-    <Avatar alt="Starship" src="/assets/home_logo.png" sx={{ width: 56, height: 56 }} variant="square"/>
+    <Avatar alt="Starship" src="/assets/home_logo.png" sx={{ width: 105, height: 79 }} variant="square"/>
   )
 }
 

@@ -51,7 +51,7 @@ export default function Page(props: Props) {
         <Box sx={{ gridArea: 'header' }}>
           <Header />
         </Box>
-        <Box sx={{ gridArea: 'sidebar' }} className={ sidebarContainer }>
+        <Box sx={{ gridArea: 'sidebar' }} m={3} className={ sidebarContainer }>
           { sidebar ? sidebar : null }
         </Box>
         <Box sx={{ gridArea: 'main' }} className={ bodyContainer }>
