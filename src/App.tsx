@@ -7,7 +7,8 @@ import FavoritesPage from "./pages/FavoritesPage";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect,
 } from "react-router-dom";
 
 function App() {
@@ -22,14 +23,9 @@ function App() {
           bgcolor={ color.black_pearl }
         >
             <Switch>
-              <Route exact path="/">
-                <HomePage />
-              </Route>
-            </Switch>
-            <Switch>
-              <Route path="/favorites">
-                <FavoritesPage />
-              </Route>
+              <Route exact path="/" render={() => (<HomePage />)} />
+              <Route exact path="/favorites" component={FavoritesPage} />
+              <Redirect to="/" />
             </Switch>
         </Box>
       </ThemeProvider>

@@ -11,6 +11,7 @@ import Pagination from "../components/Pagination";
 import Skeleton from '@mui/material/Skeleton';
 import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 const SWAPI_STARSHIPS_URL = "https://swapi.dev/api/starships";
 
@@ -25,17 +26,15 @@ function SideBar(): JSX.Element {
   }))();
 
   return (
-    <>
-      <Button className={ sidebarButton }>
-          View Favorites
-      </Button>
-    </>
+    <Link to="/favorites" style={{ textDecoration: 'none' }} className="button muted-button">
+      <Button className={ sidebarButton }>View favorites</Button>
+    </Link>
   )
 }
 
 function Body({ title, list }: any ): JSX.Element {
   const favoriteList = useSelector((state: RootState) => state.favoriteList.value);
-  
+  console.log(favoriteList);
   return (
     <>
       <Box sx={{

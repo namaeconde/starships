@@ -27,7 +27,7 @@ function Body({ title, list }: any ): JSX.Element {
                   list.map((item: any, _index: number) => {
                     return (
                       <Grid key={_index} item xs={12} sm={6}>
-                      <Typography>Favorite</Typography>
+                      <Typography>{item}</Typography>
                       </Grid>
                     )
                   })
@@ -54,6 +54,7 @@ function Body({ title, list }: any ): JSX.Element {
 
 export default function FavoritePage() {
   const favoriteList = useSelector((state: RootState) => state.favoriteList.value);
+  console.log(favoriteList);
 
   const onNextClick = () => {
     console.log("load next 10 favorites");

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Avatar from '@mui/material/Avatar';
 
 export const StarshipLogo = () => {
@@ -9,8 +10,8 @@ export const StarshipLogo = () => {
 export default function Header() {
 
   return (
-    <>
+    <Link to="/">
       <StarshipLogo />
-    </>
+    </Link>
   )
 }
