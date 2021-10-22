@@ -8,6 +8,9 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import StarshipCard from "../components/StarshipCard";
 import Pagination from "../components/Pagination";
+import Skeleton from '@mui/material/Skeleton';
+
+const SWAPI_STARSHIPS_URL = "https://swapi.dev/api/starships";
 
 function SideBar(): JSX.Element {
   const { sidebarButton } = makeStyles(() => ({
@@ -55,30 +58,69 @@ function Body({ title, list }: any ): JSX.Element {
               <Typography>No starships found.</Typography>
           }
         </Box> :
-        <Typography>Gathering starships please wait...</Typography>
+        <Box sx={{ width: '100%' }}>
+          {
+            Array.from(new Array(10)).map(() => 
+              <Skeleton />
+            )
+          }
+        </Box>
       }
     </>
   )
 }
 
+async function getStarshipsData(url: string) {
+  return await fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    return data;
+  })
+}
+
 export default function HomePage() {
+  const [ previousUrl, setPreviousUrl ] = useState(null);
+  const [ nextUrl, setNextUrl] = useState(SWAPI_STARSHIPS_URL);
   const [ starshipList, setStarshipList ] = useState(null);
 
   useEffect(() => {
-    fetch("https://swapi.dev/api/starships")
-    .then(response => response.json())
+    getStarshipsData(SWAPI_STARSHIPS_URL)
     .then(data => {
       const { results, next, previous } = data;
       setStarshipList(results);
+      setNextUrl(next);
+      setPreviousUrl(previous);
     })
   }, [])
+
+  const onNextClick = nextUrl ? () => {
+    setStarshipList(null);
+    getStarshipsData(nextUrl)
+      .then(data => {
+        const { results, next, previous } = data;
+        setStarshipList(results);
+        setNextUrl(next);
+        setPreviousUrl(previous);
+      })
+  } : null
+
+  const onPreviousClick = previousUrl ? () => {
+    setStarshipList(null);
+    getStarshipsData(previousUrl)
+      .then(data => {
+        const { results, next, previous } = data;
+        setStarshipList(results);
+        setNextUrl(next);
+        setPreviousUrl(previous);
+      })   
+  } : null
 
   return (
     <Page>
       {{
         sidebar: <SideBar />,
         body: <Body title="Starship List" list={starshipList}/>,
-        footer: starshipList ? <Pagination /> : null
+        footer: starshipList ? <Pagination onNextClick={ onNextClick } onPreviousClick={ onPreviousClick }/> : null
       }}
     </Page>
   )
