@@ -16,6 +16,9 @@ const theme = createTheme({
     mode: "dark",
     primary: {
       main: `${color.wild_watermelon}`
+    },
+    secondary: {
+      main: `${color.white}`
     }
   },
   typography: {

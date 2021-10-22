@@ -11,7 +11,6 @@ import StarshipCard from "../components/StarshipCard";
 function SideBar(): JSX.Element {
   const { sidebarButton } = makeStyles(() => ({
     sidebarButton: {
-      color:`${color.wild_watermelon}`,
       fontSize: "24px",
       backgroundColor:`${color.racing_green}`,
       borderRadius:"20px",
@@ -38,7 +37,7 @@ function Body({ title, list }: any ): JSX.Element {
         <Typography fontWeight={700} fontSize={48}>{title}</Typography>
       </Box>
       {
-        list && <Box sx={{ width: '100%' }}>
+        list ? <Box sx={{ width: '100%' }}>
           {
             list.length > 0 ?
                 <Grid container rowSpacing={2} columnSpacing={2}>
@@ -54,8 +53,27 @@ function Body({ title, list }: any ): JSX.Element {
               </Grid> :
               <Typography>No starships found.</Typography>
           }
-        </Box>
+        </Box> :
+        <Typography>Gathering starships please wait...</Typography>
       }
+    </>
+  )
+}
+
+function Pagination({ previous, next }: any): JSX.Element {
+  const { paginationButton } = makeStyles(() => ({
+    paginationButton: {
+      fontSize: "24px",
+      backgroundColor:`${color.racing_green}`,
+      borderRadius:"20px",
+      textAlign: "center",
+    }
+  }))();
+
+  return (
+    <>
+      <Button className={paginationButton} color="secondary" sx={{ mx: 1 }}>Previous page</Button>
+      <Button className={paginationButton} color="secondary" sx={{ mx: 1 }}>Next page</Button>
     </>
   )
 }
@@ -77,7 +95,7 @@ export default function HomePage() {
       {{
         sidebar: <SideBar />,
         body: <Body title="Starship List" list={starshipList}/>,
-        footer: <Box> Test </Box>
+        footer: starshipList ? <Pagination /> : null
       }}
     </Page>
   )
