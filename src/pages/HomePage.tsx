@@ -7,6 +7,7 @@ import { makeStyles } from "@mui/styles";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import StarshipCard from "../components/StarshipCard";
+import Pagination from "../components/Pagination";
 
 function SideBar(): JSX.Element {
   const { sidebarButton } = makeStyles(() => ({
@@ -56,24 +57,6 @@ function Body({ title, list }: any ): JSX.Element {
         </Box> :
         <Typography>Gathering starships please wait...</Typography>
       }
-    </>
-  )
-}
-
-function Pagination({ previous, next }: any): JSX.Element {
-  const { paginationButton } = makeStyles(() => ({
-    paginationButton: {
-      fontSize: "24px",
-      backgroundColor:`${color.racing_green}`,
-      borderRadius:"20px",
-      textAlign: "center",
-    }
-  }))();
-
-  return (
-    <>
-      <Button className={paginationButton} color="secondary" sx={{ mx: 1 }}>Previous page</Button>
-      <Button className={paginationButton} color="secondary" sx={{ mx: 1 }}>Next page</Button>
     </>
   )
 }
