@@ -59,11 +59,15 @@ function Body({ title, list }: any ): JSX.Element {
           }
         </Box> :
         <Box sx={{ width: '100%' }}>
-          {
-            Array.from(new Array(10)).map((item: number, index: number) => (
-              <Skeleton key={index}/>
-            ))
-          }
+          <Grid container rowSpacing={2} columnSpacing={2}>
+            {
+              Array.from(new Array(10)).map((item: number, index: number) => (
+                <Grid key={index} item xs={12} sm={6}>
+                  <Skeleton key={index}/>
+                </Grid>
+              ))
+            }
+          </Grid>
         </Box>
       }
     </>
