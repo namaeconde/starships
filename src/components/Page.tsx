@@ -21,15 +21,12 @@ export default function Page(props: Props) {
     },
     bodyContainer: {
       display: "flex",
-      alignItems: "center",
+      flexDirection: "column"
     },
     footerContainer: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      position: "absolute",
-      bottom: 0,
-      width: "98%"
     }
   }))();
 
