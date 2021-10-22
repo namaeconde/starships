@@ -1,11 +1,32 @@
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import Header from "../components/Header";
+import Button from "@mui/material/Button";
+import { color } from "../theme";
+import Box from "@mui/system/Box";
+import Page from "../components/Page";
 
-export default function HomePage() {
+export function SideBar(): JSX.Element {
   return (
     <>
-      <Header fixedHeader={true}/>
+      <Button
+        style={{ 
+          color:`${color.wild_watermelon}`,
+          backgroundColor:`${color.racing_green}`,
+          borderRadius:"20px"
+        }}>
+          View Favorites
+      </Button>
     </>
+  )
+}
+
+export default function HomePage() {
+
+  return (
+    <Page>
+      {{
+        sidebar: <SideBar />,
+        body: <Box> Test </Box>,
+        footer: <Box> Test </Box>
+      }}
+    </Page>
   )
 }
