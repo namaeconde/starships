@@ -49,7 +49,7 @@ function Body({ title, list }: any ): JSX.Element {
                   list.map((item: any, _index: number) => {
                     return (
                       <Grid key={_index} item xs={12} sm={6}>
-                      <StarshipCard starship={item}/>
+                      <StarshipCard key={_index} starship={item}/>
                       </Grid>
                     )
                   })
@@ -60,9 +60,9 @@ function Body({ title, list }: any ): JSX.Element {
         </Box> :
         <Box sx={{ width: '100%' }}>
           {
-            Array.from(new Array(10)).map(() => 
-              <Skeleton />
-            )
+            Array.from(new Array(10)).map((item: number, index: number) => (
+              <Skeleton key={index}/>
+            ))
           }
         </Box>
       }
@@ -72,10 +72,10 @@ function Body({ title, list }: any ): JSX.Element {
 
 async function getStarshipsData(url: string) {
   return await fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    return data;
-  })
+    .then(response => response.json())
+    .then(data => {
+      return data;
+    })
 }
 
 export default function HomePage() {
