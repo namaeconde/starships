@@ -34,7 +34,7 @@ function SideBar(): JSX.Element {
 
 function Body({ title, list }: any ): JSX.Element {
   const favoriteList = useSelector((state: RootState) => state.favoriteList.value);
-  console.log(favoriteList);
+  
   return (
     <>
       <Box sx={{

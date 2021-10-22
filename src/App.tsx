@@ -7,8 +7,7 @@ import FavoritesPage from "./pages/FavoritesPage";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect,
+  Route
 } from "react-router-dom";
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
             <Switch>
               <Route exact path="/" render={() => (<HomePage />)} />
               <Route exact path="/favorites" component={FavoritesPage} />
-              <Redirect to="/" />
             </Switch>
         </Box>
       </ThemeProvider>
