@@ -10,6 +10,7 @@ function App() {
       <CssBaseline />
       <Box
         display="flex"
+        flexDirection="column"
         minHeight="100vh"
         bgcolor={ color.black_pearl }
       >

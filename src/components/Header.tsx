@@ -1,5 +1,4 @@
 import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
 
 export const StarshipLogo = () => {
   return (

@@ -21,8 +21,7 @@ export default function Page(props: Props) {
     },
     bodyContainer: {
       display: "flex",
-      justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
     },
     footerContainer: {
       display: "flex",
@@ -30,12 +29,12 @@ export default function Page(props: Props) {
       alignItems: "center",
       position: "absolute",
       bottom: 0,
-      width: "100%"
+      width: "98%"
     }
   }))();
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box width="100%">
       <Box
         sx={{
           display: 'grid',
@@ -54,7 +53,7 @@ export default function Page(props: Props) {
         <Box sx={{ gridArea: 'sidebar' }} m={3} className={ sidebarContainer }>
           { sidebar ? sidebar : null }
         </Box>
-        <Box sx={{ gridArea: 'main' }} className={ bodyContainer }>
+        <Box sx={{ gridArea: 'main' }} mx={8} className={ bodyContainer }>
           { body }
         </Box>
         <Box sx={{ gridArea: 'footer' }} className={ footerContainer } m={2}>
