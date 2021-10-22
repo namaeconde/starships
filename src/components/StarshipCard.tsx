@@ -9,21 +9,9 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarshipImage from '../images/starship.png';
 import Grid from "@mui/material/Grid";
 import TextField from '@mui/material/TextField';
-import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
 import { useDispatch } from 'react-redux';
 import { addToList, removeFromList } from '../redux/favoriteListSlice';
-
-const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.common.white,
-    color: 'rgba(0, 0, 0, 0.87)',
-    boxShadow: theme.shadows[1],
-    fontSize: 11,
-  },
-}));
+import LightTooltip from "./LightTooltip";
 
 export default function StarshipCard({ starship, favorite, showNote }: { starship: any, favorite: boolean, showNote: boolean }): JSX.Element { // TODO: Update starship any to Starship Interface
   const { name, manufacturer, hyperdrive_rating, passengers } = starship;
