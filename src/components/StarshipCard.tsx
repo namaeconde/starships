@@ -10,7 +10,7 @@ export default function StarshipCard({ starship }: { starship: any}): JSX.Elemen
     <Paper sx={{ p:3, backgroundColor:`${color.midnigt_moss}`, borderRadius:2 }}>
       <Typography fontSize={24} fontWeight={700}>{name}</Typography>
       <Typography noWrap fontSize={18}>{manufacturer}</Typography>
-      <Rating name="read-only" value={Number(hyperdrive_rating)} readOnly />
+      <Rating name="read-only" value={Number(hyperdrive_rating)} precision={0.5} readOnly />
       <Typography fontSize={18}>Passengers: {passengers}</Typography>
     </Paper>
   )
