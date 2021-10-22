@@ -10,6 +10,8 @@ import StarshipImage from '../images/starship.png';
 import Grid from "@mui/material/Grid";
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
+import { useDispatch } from 'react-redux';
+import { addToList, removeFromList } from '../redux/favoriteListSlice';
 
 const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -22,9 +24,19 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 }));
 
-export default function StarshipCard({ starship }: { starship: any}): JSX.Element { // TODO: Update starship any to Starship Interface
+export default function StarshipCard({ starship, favorite }: { starship: any, favorite: boolean }): JSX.Element { // TODO: Update starship any to Starship Interface
   const { name, manufacturer, hyperdrive_rating, passengers } = starship;
-  const [ isFavorite, setIsFavorite ] = useState(false); // TODO: Update to get data from redux
+  const [ isFavorite, setIsFavorite ] = useState(favorite); // TODO: Update to get data from redux
+  const dispatch = useDispatch();
+
+  const onSetFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFromList(name))
+    } else {
+      dispatch(addToList(name));
+    }
+    setIsFavorite(!isFavorite);
+  }
 
   return (
     <Box sx={{ p:3, backgroundColor:`${color.midnigt_moss}`, borderRadius:2 }}>
@@ -40,7 +52,7 @@ export default function StarshipCard({ starship }: { starship: any}): JSX.Elemen
           <Typography fontSize={18}>Passengers: {passengers}</Typography>
         </Box>
         <Box item xs={4} sx={{ backgroundImage: `url(${StarshipImage})`, borderRadius:2 }} component={Grid}>
-          <IconButton color="primary" sx={{ float:"right" }} onClick={() => setIsFavorite(!isFavorite)}>
+          <IconButton color="primary" sx={{ float:"right" }} onClick={onSetFavorite}>
             { isFavorite ? <FavoriteIcon/> : <FavoriteBorderIcon/>}
           </IconButton>
         </Box>

@@ -9,6 +9,8 @@ import Grid from "@mui/material/Grid";
 import StarshipCard from "../components/StarshipCard";
 import Pagination from "../components/Pagination";
 import Skeleton from '@mui/material/Skeleton';
+import { RootState } from '../redux/store';
+import { useSelector } from 'react-redux'
 
 const SWAPI_STARSHIPS_URL = "https://swapi.dev/api/starships";
 
@@ -32,6 +34,8 @@ function SideBar(): JSX.Element {
 }
 
 function Body({ title, list }: any ): JSX.Element {
+  const favoriteList = useSelector((state: RootState) => state.favoriteList.value);
+  
   return (
     <>
       <Box sx={{
@@ -49,7 +53,7 @@ function Body({ title, list }: any ): JSX.Element {
                   list.map((item: any, _index: number) => {
                     return (
                       <Grid key={_index} item xs={12} sm={6}>
-                      <StarshipCard key={_index} starship={item}/>
+                      <StarshipCard key={_index} starship={item} favorite={favoriteList.includes(item.name)}/>
                       </Grid>
                     )
                   })
