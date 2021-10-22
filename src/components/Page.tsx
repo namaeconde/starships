@@ -35,25 +35,25 @@ export default function Page(props: Props) {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
+          gridTemplateColumns: 'repeat(1, 1fr)',
           gap: 1,
           gridTemplateRows: 'auto',
           gridTemplateAreas: 
-            `"header header . sidebar"
-            "main main main main"
-            "footer footer footer footer"`,
+            `"header sidebar"
+            "main main"
+            "footer footer"`,
         }}
       >
         <Box sx={{ gridArea: 'header' }}>
           <Header />
         </Box>
-        <Box sx={{ gridArea: 'sidebar' }} m={3} className={ sidebarContainer }>
+        <Box sx={{ gridArea: 'sidebar' }} mx={{ xs: 3, sm: 8 }} my={{ xs: 0, sm: 3 }} className={ sidebarContainer }>
           { sidebar ? sidebar : null }
         </Box>
-        <Box sx={{ gridArea: 'main' }} mx={8} className={ bodyContainer }>
+        <Box sx={{ gridArea: 'main' }} mx={{ xs: 3, sm: 8 }} mb={3} className={ bodyContainer }>
           { body }
         </Box>
-        <Box sx={{ gridArea: 'footer' }} className={ footerContainer } m={2}>
+        <Box sx={{ gridArea: 'footer' }} m={3} className={ footerContainer }>
           { footer ? footer : null }
         </Box>
       </Box>
