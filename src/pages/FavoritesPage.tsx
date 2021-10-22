@@ -7,9 +7,11 @@ import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
 import Pagination from "../components/Pagination";
 import StarshipCard from "../components/StarshipCard";
+import { useState, useEffect } from "react";
+
+const PAGE_SIZE = 10;
 
 function Body({ title, list }: any ): JSX.Element {
-  
   return (
     <>
       <Box sx={{
@@ -53,21 +55,37 @@ function Body({ title, list }: any ): JSX.Element {
   )
 }
 
+function paginate(array: Array<any>, pageSize: number, pageNumber: number): Array<any> {
+  // human-readable page numbers usually start with 1, so we reduce 1 in the first argument
+  return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
+}
+
 export default function FavoritePage() {
   const favoriteList = useSelector((state: RootState) => state.favoriteList.value);
+  const [ previousPageNumber, setPreviousPage ] = useState(0);
+  const [ nextPageNumber, setNextPageNumber] = useState(2);
+  const [ paginatedFavoriteList, setPaginatedFavoriteList ] = useState(favoriteList);
 
-  const onNextClick = () => {
-    console.log("load next 10 favorites");
-  }
+  useEffect(() => {
+    setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, nextPageNumber-1));
+  }, [favoriteList, nextPageNumber])
 
-  const onPreviousClick = () => {
-    console.log("load previous 10 favorites");
-  }
+  const onNextClick = (PAGE_SIZE * (nextPageNumber-1)) < favoriteList.length ? () => {
+    setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, nextPageNumber));
+    setNextPageNumber(nextPageNumber+1);
+    setPreviousPage(nextPageNumber);
+  } : null
+
+  const onPreviousClick = (PAGE_SIZE * (previousPageNumber-1)) > 0 ? () => {
+    setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, previousPageNumber));
+    setNextPageNumber(previousPageNumber);
+    setPreviousPage(previousPageNumber-1);
+  } : null
 
   return (
     <Page>
       {{
-        body: <Body title="Favorites" list={favoriteList}/>,
+        body: <Body title="Favorites" list={paginatedFavoriteList}/>,
         footer: favoriteList.length > 0 ? <Pagination onNextClick={ onNextClick } onPreviousClick={ onPreviousClick }/> : null
       }}
     </Page>
