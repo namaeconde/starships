@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface FavoriteListState {
-  value: Array<string>
+  value: Array<any>
 }
 
 const initialState: FavoriteListState = {
@@ -16,7 +16,7 @@ export const favoriteListSlice = createSlice({
       state.value.push(action.payload);
     },
     removeFromList: (state, action: PayloadAction<any>) => {
-      let newList = state.value.filter( data => data !== action.payload);
+      let newList = state.value.filter( data => data.name !== action.payload.name);
       state.value = newList;
     }
   }

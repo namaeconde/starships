@@ -6,6 +6,7 @@ import Page from "../components/Page";
 import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
 import Pagination from "../components/Pagination";
+import StarshipCard from "../components/StarshipCard";
 
 function Body({ title, list }: any ): JSX.Element {
   
@@ -27,7 +28,7 @@ function Body({ title, list }: any ): JSX.Element {
                   list.map((item: any, _index: number) => {
                     return (
                       <Grid key={_index} item xs={12} sm={6}>
-                      <Typography>{item}</Typography>
+                      <StarshipCard key={_index} starship={item} favorite={true} showNote={true}/>
                       </Grid>
                     )
                   })
@@ -54,7 +55,6 @@ function Body({ title, list }: any ): JSX.Element {
 
 export default function FavoritePage() {
   const favoriteList = useSelector((state: RootState) => state.favoriteList.value);
-  console.log(favoriteList);
 
   const onNextClick = () => {
     console.log("load next 10 favorites");

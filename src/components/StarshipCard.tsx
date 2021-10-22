@@ -8,6 +8,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarshipImage from '../images/starship.png';
 import Grid from "@mui/material/Grid";
+import TextField from '@mui/material/TextField';
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 import { useDispatch } from 'react-redux';
@@ -24,16 +25,16 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 }));
 
-export default function StarshipCard({ starship, favorite }: { starship: any, favorite: boolean }): JSX.Element { // TODO: Update starship any to Starship Interface
+export default function StarshipCard({ starship, favorite, showNote }: { starship: any, favorite: boolean, showNote: boolean }): JSX.Element { // TODO: Update starship any to Starship Interface
   const { name, manufacturer, hyperdrive_rating, passengers } = starship;
   const [ isFavorite, setIsFavorite ] = useState(favorite); // TODO: Update to get data from redux
   const dispatch = useDispatch();
 
   const onSetFavorite = () => {
     if (isFavorite) {
-      dispatch(removeFromList(name))
+      dispatch(removeFromList(starship))
     } else {
-      dispatch(addToList(name));
+      dispatch(addToList(starship));
     }
     setIsFavorite(!isFavorite);
   }
@@ -57,6 +58,25 @@ export default function StarshipCard({ starship, favorite }: { starship: any, fa
           </IconButton>
         </Box>
       </Box>
+      {
+        showNote && 
+        <Box 
+          sx={{
+            width: 500,
+            maxWidth: '100%',
+          }} 
+          mt={2}
+        >
+          <TextField 
+            fullWidth
+            id="notes" 
+            label="Add text" 
+            variant="outlined" 
+            multiline
+            rows={4}
+          />
+        </Box>
+      }
     </Box>
   )
 }

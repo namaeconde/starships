@@ -34,6 +34,7 @@ function SideBar(): JSX.Element {
 
 function Body({ title, list }: any ): JSX.Element {
   const favoriteList = useSelector((state: RootState) => state.favoriteList.value);
+  const favoritesByName = favoriteList.map(({ name }) => name);
   
   return (
     <>
@@ -53,7 +54,7 @@ function Body({ title, list }: any ): JSX.Element {
                   list.map((item: any, _index: number) => {
                     return (
                       <Grid key={_index} item xs={12} sm={6}>
-                      <StarshipCard key={_index} starship={item} favorite={favoriteList.includes(item.name)}/>
+                      <StarshipCard key={_index} starship={item} favorite={favoritesByName.includes(item.name)} showNote={false}/>
                       </Grid>
                     )
                   })
