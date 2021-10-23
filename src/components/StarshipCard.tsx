@@ -12,10 +12,20 @@ import TextField from '@mui/material/TextField';
 import { useDispatch } from 'react-redux';
 import { addToList, removeFromList, updateFavorite } from '../redux/favoriteListSlice';
 import LightTooltip from "./LightTooltip";
+import { RootState } from '../redux/store';
+import { useSelector } from 'react-redux';
 
-export default function StarshipCard({ starship, favorite, showNote }: { starship: any, favorite: boolean, showNote: boolean }): JSX.Element { // TODO: Update starship any to Starship Interface
+export const FavoriteStarshipCard = ({ starship } : { starship: any}) => {
+  return <StarshipCard starship={starship} showNote={true}/>
+}
+
+export default function StarshipCard({ starship, showNote }: { starship: any, showNote?: boolean }): JSX.Element { // TODO: Update starship any to Starship Interface
   const { name, manufacturer, hyperdrive_rating, passengers, notes } = starship;
   const [ notesUpdate, setNotesUpdate ] = useState(notes || "");
+  
+  const favoritesByName = (useSelector((state: RootState) => state.favoriteList.value)).map(({ name }) => name);
+  const isFavorite = favoritesByName.includes(name);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,7 +35,7 @@ export default function StarshipCard({ starship, favorite, showNote }: { starshi
   }, [notes, notesUpdate])
 
   const onSetFavorite = () => {
-    if (favorite) {
+    if (isFavorite) {
       dispatch(removeFromList(name));
     } else {
       dispatch(addToList({ name, manufacturer, hyperdrive_rating, passengers, notes }));
@@ -52,7 +62,7 @@ export default function StarshipCard({ starship, favorite, showNote }: { starshi
         </Box>
         <Box item xs={4} sx={{ backgroundImage: `url(${StarshipImage})`, borderRadius:2 }} component={Grid}>
           <IconButton color="primary" sx={{ float:"right" }} onClick={onSetFavorite}>
-            { favorite ? <FavoriteIcon/> : <FavoriteBorderIcon/>}
+            { isFavorite ? <FavoriteIcon/> : <FavoriteBorderIcon/> }
           </IconButton>
         </Box>
       </Box>

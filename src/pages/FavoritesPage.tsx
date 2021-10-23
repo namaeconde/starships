@@ -6,7 +6,7 @@ import Page, { Title } from "../components/Page";
 import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
 import Pagination, { paginate } from "../components/Pagination";
-import StarshipCard from "../components/StarshipCard";
+import { FavoriteStarshipCard } from "../components/StarshipCard";
 import { useState, useEffect } from "react";
 
 const PAGE_SIZE = 10;
@@ -22,7 +22,7 @@ function Body({ title, list }: any ): JSX.Element {
               (list.map((item: any, index: number) => {
                 return (
                   <Box component={Grid} key={index} item xs={12} sm={6}>
-                    <StarshipCard key={index} starship={item} favorite={true} showNote={true}/>
+                    <FavoriteStarshipCard key={index} starship={item} />
                   </Box>
                 )
               })) : <Typography>No data found.</Typography>
@@ -44,7 +44,7 @@ export default function FavoritePage() {
   const [ nextPageNumber, setNextPageNumber] = useState(2);
   const [ paginatedFavoriteList, setPaginatedFavoriteList ] = useState(favoriteList);
 
-  const hasNext = (PAGE_SIZE * (nextPageNumber+1)) < favoriteList.length;
+  const hasNext = (PAGE_SIZE * (nextPageNumber-1)) < favoriteList.length;
   const hasPrevious = (PAGE_SIZE * (previousPageNumber-1)) > 0;
 
   useEffect(() => {
