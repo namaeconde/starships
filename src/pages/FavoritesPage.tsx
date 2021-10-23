@@ -14,43 +14,28 @@ const PAGE_SIZE = 10;
 function Body({ title, list }: any ): JSX.Element {
   return (
     <>
-      <Box sx={{
-        display: 'flex',
-        justifyContent: 'flex-start',
-        my:3
-      }}>
+      <Box sx={{ display:'flex', justifyContent:'flex-start', my:3 }}>
         <Typography fontWeight={700} fontSize={48}>{title}</Typography>
       </Box>
-      {
-        list ? <Box sx={{ width: '100%' }}>
-          {
+      <Box container rowSpacing={2} columnSpacing={2} component={Grid}>
+        {
+          list ? 
             list.length > 0 ?
-                <Grid container rowSpacing={2} columnSpacing={2}>
-                {
-                  list.map((item: any, _index: number) => {
-                    return (
-                      <Grid key={_index} item xs={12} sm={6}>
-                      <StarshipCard key={_index} starship={item} favorite={true} showNote={true}/>
-                      </Grid>
-                    )
-                  })
-                }
-              </Grid> :
-              <Typography>No favorites found.</Typography>
-          }
-        </Box> :
-        <Box sx={{ width: '100%' }}>
-          <Grid container rowSpacing={2} columnSpacing={2}>
-            {
+              (list.map((item: any, index: number) => {
+                return (
+                  <Box component={Grid} key={index} item xs={12} sm={6}>
+                    <StarshipCard key={index} starship={item} favorite={true} showNote={true}/>
+                  </Box>
+                )
+              })) : <Typography>No data found.</Typography>
+            : 
               Array.from(new Array(10)).map((item: number, index: number) => (
-                <Grid key={index} item xs={12} sm={6}>
+                <Box component={Grid} key={index} item xs={12} sm={6}>
                   <Skeleton key={index}/>
-                </Grid>
+                </Box>
               ))
-            }
-          </Grid>
-        </Box>
-      }
+        }
+      </Box>
     </>
   )
 }
