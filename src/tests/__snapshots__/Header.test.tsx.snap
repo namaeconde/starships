@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders 1`] = `
+<a
+  href="/"
+  onClick={[Function]}
+>
+  <div
+    className="MuiAvatar-root MuiAvatar-square css-ivlicw-MuiAvatar-root"
+  >
+    <img
+      alt="Starship"
+      className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+      src="/assets/home_logo.png"
+    />
+  </div>
+</a>
+`;
