@@ -45,7 +45,10 @@ function Body({ title, list }: any ): JSX.Element {
                     <StarshipCard key={index} starship={item}/>
                   </Box>
                 )
-              })) : <Typography>No data found.</Typography>
+              })) : 
+              <Box component={Grid} item xs={12} sm={6}>
+                <Typography>No starships meant to fly.</Typography>
+              </Box>
             : 
               Array.from(new Array(10)).map((item: number, index: number) => (
                 <Box component={Grid} key={index} item xs={12} sm={6}>
@@ -60,25 +63,30 @@ function Body({ title, list }: any ): JSX.Element {
 
 async function getStarshipsData(url: string) {
   return await fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      return data;
+    .then((response) => {
+      if (response.ok) {
+        return response.json()
+      }
+    })
+    .catch((error) => {
+      console.log(error)
+      return { results: [], next: null, previous: null }
     })
 }
 
 export default function HomePage() {
   const [ previousUrl, setPreviousUrl ] = useState(null);
   const [ nextUrl, setNextUrl] = useState(SWAPI_STARSHIPS_URL);
-  const [ starshipList, setStarshipList ] = useState(null);
+  const [ starshipList, setStarshipList ] = useState<Array<any> | null>(null);
 
   useEffect(() => {
     getStarshipsData(SWAPI_STARSHIPS_URL)
-    .then(data => {
-      const { results, next, previous } = data;
-      setStarshipList(results);
-      setNextUrl(next);
-      setPreviousUrl(previous);
-    })
+      .then(data => {
+        const { results, next, previous } = data;
+        setStarshipList(results);
+        setNextUrl(next);
+        setPreviousUrl(previous);
+      })
   }, [])
 
   const onNextClick = nextUrl ? () => {
@@ -108,7 +116,7 @@ export default function HomePage() {
       {{
         sidebar: <SideBar />,
         body: <Body title="Starship List" list={starshipList}/>,
-        footer: starshipList ? <Pagination onNextClick={ onNextClick } onPreviousClick={ onPreviousClick }/> : null
+        footer: starshipList && starshipList.length > 0 ? <Pagination onNextClick={ onNextClick } onPreviousClick={ onPreviousClick }/> : null
       }}
     </Page>
   )

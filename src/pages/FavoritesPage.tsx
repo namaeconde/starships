@@ -25,7 +25,10 @@ function Body({ title, list }: any ): JSX.Element {
                     <FavoriteStarshipCard key={index} starship={item} />
                   </Box>
                 )
-              })) : <Typography>No data found.</Typography>
+              })) : 
+              <Box component={Grid} item xs={12} sm={6}>
+                <Typography>You have no favorites.</Typography>
+              </Box>
             : 
               Array.from(new Array(10)).map((item: number, index: number) => (
                 <Box component={Grid} key={index} item xs={12} sm={6}>
