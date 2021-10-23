@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Page from "../components/Page";
 import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
-import Pagination from "../components/Pagination";
+import Pagination, { paginate } from "../components/Pagination";
 import StarshipCard from "../components/StarshipCard";
 import { useState, useEffect } from "react";
 
@@ -40,28 +40,26 @@ function Body({ title, list }: any ): JSX.Element {
   )
 }
 
-function paginate(array: Array<any>, pageSize: number, pageNumber: number): Array<any> {
-  // human-readable page numbers usually start with 1, so we reduce 1 in the first argument
-  return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
-}
-
 export default function FavoritePage() {
   const favoriteList = useSelector((state: RootState) => state.favoriteList.value);
   const [ previousPageNumber, setPreviousPage ] = useState(0);
   const [ nextPageNumber, setNextPageNumber] = useState(2);
   const [ paginatedFavoriteList, setPaginatedFavoriteList ] = useState(favoriteList);
 
+  const hasNext = (PAGE_SIZE * (nextPageNumber+1)) < favoriteList.length;
+  const hasPrevious = (PAGE_SIZE * (previousPageNumber-1)) > 0;
+
   useEffect(() => {
     setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, nextPageNumber-1));
   }, [favoriteList, nextPageNumber])
 
-  const onNextClick = (PAGE_SIZE * (nextPageNumber-1)) < favoriteList.length ? () => {
+  const onNextClick = hasNext ? () => {
     setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, nextPageNumber));
     setNextPageNumber(nextPageNumber+1);
     setPreviousPage(nextPageNumber);
   } : null
 
-  const onPreviousClick = (PAGE_SIZE * (previousPageNumber-1)) > 0 ? () => {
+  const onPreviousClick = hasPrevious ? () => {
     setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, previousPageNumber));
     setNextPageNumber(previousPageNumber);
     setPreviousPage(previousPageNumber-1);
