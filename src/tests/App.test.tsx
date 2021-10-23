@@ -12,6 +12,6 @@ afterEach(cleanup);
 
 test('App renders', () => {
   store = mockStore(initialState);
-  const { asFragment }= render(<Provider store={store}><App /></Provider>,);
+  const { asFragment } = render(<Provider store={store}><App /></Provider>,);
   expect(asFragment()).toMatchSnapshot();
 });

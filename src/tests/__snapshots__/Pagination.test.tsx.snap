@@ -1,46 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination renders 1`] = `
-Array [
+<DocumentFragment>
   <button
-    className="MuiButton-root MuiButton-text MuiButton-textSecondary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root Mui-disabled makeStyles-paginationButton-1 css-1oaij1c-MuiButtonBase-root-MuiButton-root"
-    disabled={true}
-    onBlur={[Function]}
-    onContextMenu={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={-1}
+    class="MuiButton-root MuiButton-text MuiButton-textSecondary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root Mui-disabled makeStyles-paginationButton-1 css-1oaij1c-MuiButtonBase-root-MuiButton-root"
+    disabled=""
+    tabindex="-1"
     type="button"
   >
     Previous page
-  </button>,
+  </button>
   <button
-    className="MuiButton-root MuiButton-text MuiButton-textSecondary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root Mui-disabled makeStyles-paginationButton-1 css-1oaij1c-MuiButtonBase-root-MuiButton-root"
-    disabled={true}
-    onBlur={[Function]}
-    onContextMenu={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={-1}
+    class="MuiButton-root MuiButton-text MuiButton-textSecondary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root Mui-disabled makeStyles-paginationButton-1 css-1oaij1c-MuiButtonBase-root-MuiButton-root"
+    disabled=""
+    tabindex="-1"
     type="button"
   >
     Next page
-  </button>,
-]
+  </button>
+</DocumentFragment>
 `;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import renderer from 'react-test-renderer';
+import { render, cleanup } from '@testing-library/react'
 import Header from '../components/Header';
 
+afterEach(cleanup);
+
 test('Header renders', () => {
-  const component = renderer.create(<Router><Header></Header></Router>,);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { asFragment }= render(<Router><Header></Header></Router>,);
+  expect(asFragment()).toMatchSnapshot();
 });

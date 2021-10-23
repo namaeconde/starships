@@ -1,295 +1,191 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomePage renders 1`] = `
-<div
-  className="MuiBox-root css-8atqhb"
->
+<DocumentFragment>
   <div
-    className="MuiBox-root css-l10m55"
+    class="MuiBox-root css-8atqhb"
   >
     <div
-      className="MuiBox-root css-175rvmj"
-    >
-      <a
-        href="/"
-        onClick={[Function]}
-      >
-        <div
-          className="MuiAvatar-root MuiAvatar-square css-ivlicw-MuiAvatar-root"
-        >
-          <img
-            alt="Starship"
-            className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
-            src="/assets/home_logo.png"
-          />
-        </div>
-      </a>
-    </div>
-    <div
-      className="makeStyles-container-1 MuiBox-root css-vq34d8"
-    >
-      <a
-        className="button muted-button"
-        href="/favorites"
-        onClick={[Function]}
-        style={
-          Object {
-            "textDecoration": "none",
-          }
-        }
-      >
-        <button
-          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-sidebarButton-3 css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          View favorites
-        </button>
-      </a>
-    </div>
-    <div
-      className="makeStyles-main-2 MuiBox-root css-1xkyxdb"
+      class="MuiBox-root css-l10m55"
     >
       <div
-        className="MuiBox-root css-uj0oyz"
+        class="MuiBox-root css-175rvmj"
       >
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-15ixj63-MuiTypography-root"
+        <a
+          href="/"
         >
-          Starship List
-        </p>
+          <div
+            class="MuiAvatar-root MuiAvatar-square css-ivlicw-MuiAvatar-root"
+          >
+            <img
+              alt="Starship"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="/assets/home_logo.png"
+            />
+          </div>
+        </a>
       </div>
       <div
-        className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-undefined MuiBox-root css-1vtca5r-MuiGrid-root"
+        class="makeStyles-container-1 MuiBox-root css-vq34d8"
+      >
+        <a
+          class="button muted-button"
+          href="/favorites"
+          style="text-decoration: none;"
+        >
+          <button
+            class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-sidebarButton-3 css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
+          >
+            View favorites
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </a>
+      </div>
+      <div
+        class="makeStyles-main-2 MuiBox-root css-1xkyxdb"
       >
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
+          class="MuiBox-root css-uj0oyz"
         >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-15ixj63-MuiTypography-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
+            Starship List
+          </p>
         </div>
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-undefined MuiBox-root css-1vtca5r-MuiGrid-root"
         >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": "100%",
-              }
-            }
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
           >
-            <div
-              style={
-                Object {
-                  "paddingTop": "57%",
-                }
-              }
-            />
-          </span>
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
+          >
+            <span
+              class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse MuiSkeleton-withChildren MuiSkeleton-heightAuto css-h7y7li-MuiSkeleton-root"
+              style="width: 100%;"
+            >
+              <div
+                style="padding-top: 57%;"
+              />
+            </span>
+          </div>
         </div>
       </div>
+      <div
+        class="makeStyles-container-1 MuiBox-root css-1icjmr2"
+      />
     </div>
-    <div
-      className="makeStyles-container-1 MuiBox-root css-1icjmr2"
-    />
   </div>
-</div>
+</DocumentFragment>
 `;
