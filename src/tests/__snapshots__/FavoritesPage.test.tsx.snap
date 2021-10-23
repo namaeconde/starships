@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders 1`] = `
+exports[`FavoritesPage renders 1`] = `
 <div
   className="MuiBox-root css-8atqhb"
 >
@@ -27,39 +27,7 @@ exports[`Header renders 1`] = `
     </div>
     <div
       className="makeStyles-container-1 MuiBox-root css-vq34d8"
-    >
-      <a
-        className="button muted-button"
-        href="/favorites"
-        onClick={[Function]}
-        style={
-          Object {
-            "textDecoration": "none",
-          }
-        }
-      >
-        <button
-          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root makeStyles-sidebarButton-3 css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          View favorites
-        </button>
-      </a>
-    </div>
+    />
     <div
       className="makeStyles-main-2 MuiBox-root css-1xkyxdb"
     >
@@ -69,142 +37,17 @@ exports[`Header renders 1`] = `
         <p
           className="MuiTypography-root MuiTypography-body1 css-15ixj63-MuiTypography-root"
         >
-          Starship List
+          Favorites
         </p>
       </div>
       <div
         className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-undefined MuiBox-root css-1vtca5r-MuiGrid-root"
       >
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
         >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
-        >
-          <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-1n7gpw1-MuiSkeleton-root"
-            style={
-              Object {
-                "height": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </div>
+          No data found.
+        </p>
       </div>
     </div>
     <div
@@ -214,7 +57,7 @@ exports[`Header renders 1`] = `
 </div>
 `;
 
-exports[`HomePage renders 1`] = `
+exports[`Header renders 1`] = `
 <div
   className="MuiBox-root css-8atqhb"
 >
