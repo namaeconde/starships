@@ -1,62 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FavoritesPage renders 1`] = `
-<div
-  className="MuiBox-root css-8atqhb"
->
+<DocumentFragment>
   <div
-    className="MuiBox-root css-l10m55"
+    class="MuiBox-root css-8atqhb"
   >
     <div
-      className="MuiBox-root css-175rvmj"
-    >
-      <a
-        href="/"
-        onClick={[Function]}
-      >
-        <div
-          className="MuiAvatar-root MuiAvatar-square css-ivlicw-MuiAvatar-root"
-        >
-          <img
-            alt="Starship"
-            className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
-            src="/assets/home_logo.png"
-          />
-        </div>
-      </a>
-    </div>
-    <div
-      className="makeStyles-container-1 MuiBox-root css-vq34d8"
-    />
-    <div
-      className="makeStyles-main-2 MuiBox-root css-1xkyxdb"
+      class="MuiBox-root css-l10m55"
     >
       <div
-        className="MuiBox-root css-uj0oyz"
+        class="MuiBox-root css-175rvmj"
       >
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-15ixj63-MuiTypography-root"
+        <a
+          href="/"
         >
-          Favorites
-        </p>
+          <div
+            class="MuiAvatar-root MuiAvatar-square css-ivlicw-MuiAvatar-root"
+          >
+            <img
+              alt="Starship"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="/assets/home_logo.png"
+            />
+          </div>
+        </a>
       </div>
       <div
-        className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-undefined MuiBox-root css-1vtca5r-MuiGrid-root"
+        class="makeStyles-container-3 MuiBox-root css-vq34d8"
+      />
+      <div
+        class="makeStyles-main-4 MuiBox-root css-1xkyxdb"
       >
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
+          class="MuiBox-root css-uj0oyz"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-body1 css-15ixj63-MuiTypography-root"
           >
-            You have no favorites.
+            Favorites
           </p>
         </div>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-undefined MuiBox-root css-1vtca5r-MuiGrid-root"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiBox-root css-es3gb9-MuiGrid-root"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              You have no favorites.
+            </p>
+          </div>
+        </div>
       </div>
+      <div
+        class="makeStyles-container-3 MuiBox-root css-1icjmr2"
+      />
     </div>
-    <div
-      className="makeStyles-container-1 MuiBox-root css-1icjmr2"
-    />
   </div>
-</div>
+</DocumentFragment>
 `;
