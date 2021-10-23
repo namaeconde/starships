@@ -13,20 +13,15 @@ interface Props {
 export default function Page(props: Props) {
   const { sidebar, body, footer } = props.children;
 
-  const { sidebarContainer, bodyContainer, footerContainer } = makeStyles(() => ({
-    sidebarContainer: {
+  const styles = makeStyles(() => ({
+    container: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center"
     },
-    bodyContainer: {
+    main: {
       display: "flex",
       flexDirection: "column"
-    },
-    footerContainer: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
     }
   }))();
 
@@ -47,13 +42,13 @@ export default function Page(props: Props) {
         <Box sx={{ gridArea: 'header' }}>
           <Header />
         </Box>
-        <Box sx={{ gridArea: 'sidebar' }} mx={{ xs: 3, sm: 8 }} my={{ xs: 0, sm: 3 }} className={ sidebarContainer }>
+        <Box sx={{ gridArea: 'sidebar' }} mx={{ xs: 3, sm: 8 }} my={{ xs: 0, sm: 3 }} className={ styles.container }>
           { sidebar ? sidebar : null }
         </Box>
-        <Box sx={{ gridArea: 'main' }} mx={{ xs: 3, sm: 8 }} mb={3} className={ bodyContainer }>
+        <Box sx={{ gridArea: 'main' }} mx={{ xs: 3, sm: 8 }} mb={3} className={ styles.main }>
           { body }
         </Box>
-        <Box sx={{ gridArea: 'footer' }} m={3} className={ footerContainer }>
+        <Box sx={{ gridArea: 'footer' }} m={3} className={ styles.container }>
           { footer ? footer : null }
         </Box>
       </Box>
