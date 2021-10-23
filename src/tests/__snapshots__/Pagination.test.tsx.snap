@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders 1`] = `
+<a
+  href="/"
+  onClick={[Function]}
+>
+  <div
+    className="MuiAvatar-root MuiAvatar-square css-ivlicw-MuiAvatar-root"
+  >
+    <img
+      alt="Starship"
+      className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+      src="/assets/home_logo.png"
+    />
+  </div>
+</a>
+`;
+
+exports[`Pagination renders 1`] = `
+Array [
+  <button
+    className="MuiButton-root MuiButton-text MuiButton-textSecondary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root Mui-disabled makeStyles-paginationButton-1 css-1oaij1c-MuiButtonBase-root-MuiButton-root"
+    disabled={true}
+    onBlur={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={-1}
+    type="button"
+  >
+    Previous page
+  </button>,
+  <button
+    className="MuiButton-root MuiButton-text MuiButton-textSecondary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root Mui-disabled makeStyles-paginationButton-1 css-1oaij1c-MuiButtonBase-root-MuiButton-root"
+    disabled={true}
+    onBlur={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={-1}
+    type="button"
+  >
+    Next page
+  </button>,
+]
+`;
