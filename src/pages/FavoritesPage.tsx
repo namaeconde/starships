@@ -31,8 +31,10 @@ function Body({ title, list }: any ): JSX.Element {
               </Box>
             : 
               Array.from(new Array(10)).map((item: number, index: number) => (
-                <Box component={Grid} key={index} item xs={12} sm={6}>
-                  <Skeleton key={index}/>
+                <Box component={Grid} key={index} item xs={12} sm={6} >
+                  <Skeleton key={index} sx={{ borderRadius:2 }} variant="rectangular" width="100%">
+                    <div style={{ paddingTop: '57%' }} />
+                  </Skeleton>
                 </Box>
               ))
         }
