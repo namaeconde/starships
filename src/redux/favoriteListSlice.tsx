@@ -16,7 +16,7 @@ export const favoriteListSlice = createSlice({
       state.value.push(action.payload);
     },
     removeFromList: (state, action: PayloadAction<any>) => {
-      let newList = state.value.filter( data => data.name !== action.payload.name);
+      let newList = state.value.filter(data => data.name !== action.payload);
       state.value = newList;
     },
     updateFavorite: (state, action: PayloadAction<any>) => {
@@ -30,7 +30,6 @@ export const favoriteListSlice = createSlice({
           ...action.payload
         }
       })
-
       state.value = newList;
     }
   }

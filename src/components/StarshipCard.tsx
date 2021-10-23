@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Rating from '@mui/material/Rating';
@@ -14,23 +14,26 @@ import { addToList, removeFromList, updateFavorite } from '../redux/favoriteList
 import LightTooltip from "./LightTooltip";
 
 export default function StarshipCard({ starship, favorite, showNote }: { starship: any, favorite: boolean, showNote: boolean }): JSX.Element { // TODO: Update starship any to Starship Interface
-  const { name, manufacturer, hyperdrive_rating, passengers } = starship;
-  const [ isFavorite, setIsFavorite ] = useState(favorite);
-  const [ notes, setNotes ] = useState(starship.notes);
+  const { name, manufacturer, hyperdrive_rating, passengers, notes } = starship;
+  const [ notesUpdate, setNotesUpdate ] = useState(notes || "");
   const dispatch = useDispatch();
 
-  const onSetFavorite = () => {
-    if (isFavorite) {
-      dispatch(removeFromList(starship))
-    } else {
-      dispatch(addToList(starship));
+  useEffect(() => {
+    if (notesUpdate !== notes) {
+      setNotesUpdate(notes || "");
     }
-    setIsFavorite(!isFavorite);
+  }, [notes, notesUpdate])
+
+  const onSetFavorite = () => {
+    if (favorite) {
+      dispatch(removeFromList(name));
+    } else {
+      dispatch(addToList({ name, manufacturer, hyperdrive_rating, passengers, notes }));
+    }
   }
 
-  const handleAddNotes = (event: { target: { value: any; }; }) => {
+  const handleAddNotes = (event:any) => {
     const newNote = event.target.value;
-    setNotes(newNote);
     dispatch(updateFavorite({...starship, notes: newNote }));
   }
 
@@ -49,31 +52,25 @@ export default function StarshipCard({ starship, favorite, showNote }: { starshi
         </Box>
         <Box item xs={4} sx={{ backgroundImage: `url(${StarshipImage})`, borderRadius:2 }} component={Grid}>
           <IconButton color="primary" sx={{ float:"right" }} onClick={onSetFavorite}>
-            { isFavorite ? <FavoriteIcon/> : <FavoriteBorderIcon/>}
+            { favorite ? <FavoriteIcon/> : <FavoriteBorderIcon/>}
           </IconButton>
         </Box>
       </Box>
       {
         showNote && 
-        <Box 
-          sx={{
-            width: 500,
-            maxWidth: '100%',
-          }} 
-          mt={2}
-        >
-          <TextField 
-            fullWidth
-            id="notes" 
-            label="Add text" 
-            variant="outlined" 
-            multiline
-            rows={4}
-            value={notes}
-            onChange={handleAddNotes}
-          />
-        </Box>
-      }
+          <Box sx={{ maxWidth: '100%' }} mt={2}>
+            <TextField 
+              fullWidth
+              id="notes" 
+              label="Add text" 
+              variant="outlined" 
+              multiline
+              rows={4}
+              value={notesUpdate}
+              onChange={handleAddNotes}
+            />
+          </Box>
+        }
     </Box>
   )
 }
