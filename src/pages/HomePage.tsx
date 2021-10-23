@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import { color } from "../theme";
 import Box from "@mui/system/Box";
-import Page from "../components/Page";
+import Page, { Title } from "../components/Page";
 import { makeStyles } from "@mui/styles";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
@@ -38,9 +38,7 @@ function Body({ title, list }: any ): JSX.Element {
   
   return (
     <>
-      <Box sx={{ display:'flex', justifyContent:'flex-start', my:3 }}>
-        <Typography fontWeight={700} fontSize={48}>{title}</Typography>
-      </Box>
+      <Title>{title}</Title>
       <Box container rowSpacing={2} columnSpacing={2} component={Grid}>
         {
           list ? 

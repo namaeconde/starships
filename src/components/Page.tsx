@@ -1,4 +1,5 @@
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
 import { ReactNode } from "react";
 import Header from "./Header";
@@ -8,6 +9,14 @@ interface Props {
     sidebar?: ReactNode
     body: ReactNode
     footer?: ReactNode  }
+}
+
+export const Title = ({ children } : { children: any}) => {
+  return (
+    <Box sx={{ display:'flex', justifyContent:'flex-start', my:3 }}>
+      <Typography fontWeight={700} fontSize={48}>{children}</Typography>
+    </Box>
+  )
 }
 
 export default function Page(props: Props) {

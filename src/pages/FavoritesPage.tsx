@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
-import Page from "../components/Page";
+import Page, { Title } from "../components/Page";
 import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
 import Pagination, { paginate } from "../components/Pagination";
@@ -14,9 +14,7 @@ const PAGE_SIZE = 10;
 function Body({ title, list }: any ): JSX.Element {
   return (
     <>
-      <Box sx={{ display:'flex', justifyContent:'flex-start', my:3 }}>
-        <Typography fontWeight={700} fontSize={48}>{title}</Typography>
-      </Box>
+      <Title>{title}</Title>
       <Box container rowSpacing={2} columnSpacing={2} component={Grid}>
         {
           list ? 
