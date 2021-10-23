@@ -19,6 +19,10 @@ export const Title = ({ children } : { children: any}) => {
   )
 }
 
+export function scrollToTop() {
+  window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+}
+
 export default function Page(props: Props) {
   const { sidebar, body, footer } = props.children;
 

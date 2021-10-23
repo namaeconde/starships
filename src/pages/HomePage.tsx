@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import { color } from "../theme";
 import Box from "@mui/system/Box";
-import Page, { Title } from "../components/Page";
+import Page, { Title, scrollToTop } from "../components/Page";
 import { makeStyles } from "@mui/styles";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
@@ -98,6 +98,7 @@ export default function HomePage() {
         setStarshipList(results);
         setNextUrl(next);
         setPreviousUrl(previous);
+        scrollToTop();
       })
   } : null
 
@@ -109,6 +110,7 @@ export default function HomePage() {
         setStarshipList(results);
         setNextUrl(next);
         setPreviousUrl(previous);
+        scrollToTop();
       })   
   } : null
 

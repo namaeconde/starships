@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
-import Page, { Title } from "../components/Page";
+import Page, { Title, scrollToTop } from "../components/Page";
 import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
 import Pagination, { paginate } from "../components/Pagination";
@@ -60,12 +60,14 @@ export default function FavoritePage() {
     setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, nextPageNumber));
     setNextPageNumber(nextPageNumber+1);
     setPreviousPage(nextPageNumber);
+    scrollToTop();
   } : null
 
   const onPreviousClick = hasPrevious ? () => {
     setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, previousPageNumber));
     setNextPageNumber(previousPageNumber);
     setPreviousPage(previousPageNumber-1);
+    scrollToTop();
   } : null
 
   return (
