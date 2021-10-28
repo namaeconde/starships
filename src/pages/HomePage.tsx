@@ -76,42 +76,30 @@ async function getStarshipsData(url: string) {
 }
 
 export default function HomePage() {
-  const [ previousUrl, setPreviousUrl ] = useState(null);
-  const [ nextUrl, setNextUrl] = useState(SWAPI_STARSHIPS_URL);
+  const [ page, setPage ] = useState(1);
+  const [ previousPage, setPreviousPage ] = useState(page-1);
+  const [ nextPage, setNextPage] = useState(page+1);
   const [ starshipList, setStarshipList ] = useState<Array<any> | null>(null);
 
   useEffect(() => {
-    getStarshipsData(SWAPI_STARSHIPS_URL)
+    getStarshipsData(`${SWAPI_STARSHIPS_URL}/?page=${page}`)
       .then(data => {
         const { results, next, previous } = data;
         setStarshipList(results);
-        setNextUrl(next);
-        setPreviousUrl(previous);
-      })
-  }, [])
-
-  const onNextClick = nextUrl ? () => {
-    setStarshipList(null);
-    getStarshipsData(nextUrl)
-      .then(data => {
-        const { results, next, previous } = data;
-        setStarshipList(results);
-        setNextUrl(next);
-        setPreviousUrl(previous);
+        setNextPage(next ? page+1 : -1);
+        setPreviousPage(previous ? page-1 : -1);
         scrollToTop();
       })
+  }, [page])
+
+  const onNextClick = nextPage > 0 ? () => {
+    setStarshipList(null);
+    setPage(nextPage);
   } : null
 
-  const onPreviousClick = previousUrl ? () => {
+  const onPreviousClick = previousPage > 0 ? () => {
     setStarshipList(null);
-    getStarshipsData(previousUrl)
-      .then(data => {
-        const { results, next, previous } = data;
-        setStarshipList(results);
-        setNextUrl(next);
-        setPreviousUrl(previous);
-        scrollToTop();
-      })   
+    setPage(previousPage);   
   } : null
 
   return (
