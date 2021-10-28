@@ -46,6 +46,7 @@ function Body({ title, list }: any ): JSX.Element {
 export default function FavoritePage() {
   const favoriteList = useSelector((state: RootState) => state.favoriteList.value);
   const [ previousPageNumber, setPreviousPage ] = useState(0);
+  const [ page, setPage ] = useState(1);
   const [ nextPageNumber, setNextPageNumber] = useState(2);
   const [ paginatedFavoriteList, setPaginatedFavoriteList ] = useState(favoriteList);
 
@@ -53,21 +54,18 @@ export default function FavoritePage() {
   const hasPrevious = (PAGE_SIZE * (previousPageNumber-1)) > 0;
 
   useEffect(() => {
-    setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, nextPageNumber-1));
-  }, [favoriteList, nextPageNumber])
+    setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, page));
+    setNextPageNumber(page+1);
+    setPreviousPage(page-1);
+    scrollToTop();
+  }, [favoriteList, page])
 
   const onNextClick = hasNext ? () => {
-    setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, nextPageNumber));
-    setNextPageNumber(nextPageNumber+1);
-    setPreviousPage(nextPageNumber);
-    scrollToTop();
+    setPage(nextPageNumber);
   } : null
 
   const onPreviousClick = hasPrevious ? () => {
-    setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, previousPageNumber));
-    setNextPageNumber(previousPageNumber);
-    setPreviousPage(previousPageNumber-1);
-    scrollToTop();
+    setPage(previousPageNumber);
   } : null
 
   return (
