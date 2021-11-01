@@ -22,7 +22,7 @@ function App() {
           bgcolor={ color.black_pearl }
         >
             <Switch>
-              <Route exact path="/" render={() => (<HomePage />)} />
+              <Route exact path="/" component={HomePage} />
               <Route exact path="/favorites" component={FavoritesPage} />
             </Switch>
         </Box>
