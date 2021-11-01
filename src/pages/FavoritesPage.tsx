@@ -50,8 +50,8 @@ export default function FavoritePage() {
   const [ nextPageNumber, setNextPageNumber] = useState(2);
   const [ paginatedFavoriteList, setPaginatedFavoriteList ] = useState(favoriteList);
 
-  const hasNext = (PAGE_SIZE * (nextPageNumber-1)) < favoriteList.length;
-  const hasPrevious = (PAGE_SIZE * (previousPageNumber-1)) > 0;
+  const hasNext = (PAGE_SIZE * page) < favoriteList.length;
+  const hasPrevious = (PAGE_SIZE * previousPageNumber) > 0;
 
   useEffect(() => {
     setPaginatedFavoriteList(paginate(favoriteList, PAGE_SIZE, page));
